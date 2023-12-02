@@ -57,7 +57,17 @@ class _SearchCountryScreenState extends State<SearchCountryScreen> {
             return ApiResponseStatus.loadingStatus();
           } else if (apiResponse.status == Status.COMPLETE) {
             List<CountriesResponseModel> data = apiResponse.data;
-            return _buildCompleteState(height, data, width);
+
+            List<CountriesResponseModel> filteredData =
+                searchCountry.text.isEmpty
+                    ? data
+                    : data
+                        .where((item) => item.country!
+                            .toLowerCase()
+                            .contains(searchCountry.text.toLowerCase()))
+                        .toList();
+
+            return _buildCompleteState(height, filteredData, width);
           } else if (apiResponse.status == Status.ERROR) {
             return ApiResponseStatus.errorStatus(apiResponse);
           } else {

@@ -7,7 +7,7 @@ class ApiResponseStatus {
 
   static Center errorStatus(ApiResponse<dynamic> apiResponse) => Center(
         child: Text(
-            "Oops! Something went wrong. \nPlease try again later. \nIf the problem persists, contact support. \nError: ${apiResponse.message}",
+            "Oops! Something went wrong. \nPlease try again later. \nIf the problem persists, contact support. \nError: \n${apiResponse.message}",
             textAlign: TextAlign.center),
       );
 

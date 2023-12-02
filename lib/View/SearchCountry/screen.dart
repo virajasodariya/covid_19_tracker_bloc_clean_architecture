@@ -150,10 +150,7 @@ class _SearchCountryScreenState extends State<SearchCountryScreen> {
                           "Effected: ${formatIndianNumber(data[index].active)}",
                           style: MyFontStyle.kTitleLarge,
                         ),
-                        trailing: IconButton(
-                          icon: const Icon(Icons.arrow_forward),
-                          onPressed: () {},
-                        ),
+                        trailing: const Icon(Icons.arrow_forward),
                       ),
                     ),
                   ),

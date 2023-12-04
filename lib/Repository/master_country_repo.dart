@@ -1,6 +1,6 @@
 import 'package:covid_19_tracker_bloc_clean_architecture/Api/api_handlers.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/Api/base_url.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/MasterCountry/Model/master_country_response_model.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Model/master_country_response_model.dart';
 
 class MasterCountryRepo {
   static Future<MasterCountryResponseModel> getSingleCountryData(

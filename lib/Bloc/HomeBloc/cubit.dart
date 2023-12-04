@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:covid_19_tracker_bloc_clean_architecture/Api/api_response.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/Home/Bloc/state.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/Home/Model/all_repo.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/Home/Model/all_response_model.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Bloc/HomeBloc/state.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Repository/all_repo.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Model/all_response_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AllCubit extends Cubit<AllState> {

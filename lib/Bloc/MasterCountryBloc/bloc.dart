@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:covid_19_tracker_bloc_clean_architecture/Api/api_response.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/MasterCountry/Bloc/event.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/MasterCountry/Bloc/state.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/MasterCountry/Model/master_country_repo.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/MasterCountry/Model/master_country_response_model.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Bloc/MasterCountryBloc/event.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Bloc/MasterCountryBloc/state.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Repository/master_country_repo.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Model/master_country_response_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MasterCountryBloc extends Bloc<MasterCountryEvent, MasterCountryState> {

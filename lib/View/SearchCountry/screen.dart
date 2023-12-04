@@ -3,10 +3,10 @@ import 'package:covid_19_tracker_bloc_clean_architecture/Service/api_calling_sta
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/colors.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/routes.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/text_style.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Bloc/bloc.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Bloc/event.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Bloc/state.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Model/countries_response_model.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Bloc/SearchCountryBloc/bloc.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Bloc/SearchCountryBloc/event.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Bloc/SearchCountryBloc/state.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Model/countries_response_model.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/View/Widget/format_indian_number.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/View/Widget/sized_box.dart';
 import 'package:flutter/material.dart';

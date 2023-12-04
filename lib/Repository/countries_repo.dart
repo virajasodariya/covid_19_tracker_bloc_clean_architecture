@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:covid_19_tracker_bloc_clean_architecture/Api/api_handlers.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/Api/base_url.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Model/countries_response_model.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/Model/countries_response_model.dart';
 
 class CountriesRepo {
   static Future<List<CountriesResponseModel>> getAllCountries() async {

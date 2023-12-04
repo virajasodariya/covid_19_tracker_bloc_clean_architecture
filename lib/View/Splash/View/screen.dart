@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/images.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/routes.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/text_style.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/Widget/sized_box.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/Widget/sized_box.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,7 +1,7 @@
-import 'package:covid_19_tracker_bloc_clean_architecture/View/Home/screen.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/MasterCountry/screen.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/screen.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/Splash/screen.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/Home/View/screen.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/MasterCountry/View/screen.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/View/screen.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/Splash/View/screen.dart';
 import 'package:flutter/material.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {

@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:covid_19_tracker_bloc_clean_architecture/Api/api_response.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/Model/countries_response_model.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/Repo/countries_repo.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/event.dart';
-import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/state.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Bloc/event.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Bloc/state.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Model/countries_repo.dart';
+import 'package:covid_19_tracker_bloc_clean_architecture/View/SearchCountry/Model/countries_response_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CountriesBloc extends Bloc<CountriesEvent, CountriesState> {

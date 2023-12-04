@@ -1,7 +1,7 @@
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/colors.dart';
 import 'package:covid_19_tracker_bloc_clean_architecture/Utils/text_style.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData covidTheme = ThemeData(
   brightness: Brightness.light,

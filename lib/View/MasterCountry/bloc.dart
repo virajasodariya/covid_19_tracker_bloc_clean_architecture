@@ -24,7 +24,7 @@ class MasterCountryBloc extends Bloc<MasterCountryEvent, MasterCountryState> {
         MasterCountryResponseModel response =
             await MasterCountryRepo.getSingleCountryData(countryName);
 
-        log("COUNTRIES REPO RESPONSE ======== $response");
+        // log("COUNTRIES REPO RESPONSE ======== $response");
 
         emit(WrapperMasterCountryState(ApiResponse.complete(response)));
       } catch (error) {

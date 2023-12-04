@@ -7,11 +7,11 @@ import 'package:covid_19_tracker_bloc_clean_architecture/Model/all_response_mode
 class AllCountriesRepo {
   static Future<AllResponseModel> getAllCountriesData() async {
     String url = "${BaseUrl.kBaseUrl}${EndPoint.kAll}";
-    log("ALL COUNTRIES URL : $url");
+    // log("ALL COUNTRIES URL : $url");
 
     var apiResponse = await APIService().getResponse(
       url: url,
-      apitype: APIType.aGet,
+      apiType: APIType.aGet,
     );
 
     AllResponseModel responseData = AllResponseModel.fromJson(apiResponse);

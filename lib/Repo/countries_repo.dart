@@ -8,11 +8,11 @@ import 'package:covid_19_tracker_bloc_clean_architecture/Model/countries_respons
 class CountriesRepo {
   static Future<List<CountriesResponseModel>> getAllCountries() async {
     String url = "${BaseUrl.kBaseUrl}${EndPoint.kCountries}";
-    log("COUNTRIES URL : $url");
+    // log("COUNTRIES URL : $url");
 
     var apiResponse = await APIService().getResponse(
       url: url,
-      apitype: APIType.aGet,
+      apiType: APIType.aGet,
     );
 
     List<CountriesResponseModel> responseData =

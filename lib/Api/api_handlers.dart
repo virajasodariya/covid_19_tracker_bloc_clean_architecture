@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'app_exception.dart';
@@ -10,54 +9,64 @@ import 'app_exception.dart';
 enum APIType { aPost, aGet, aPut, aPatch }
 
 class APIService {
-  var response;
-
-  Future getResponse(
-      {required String url,
-      required APIType apitype,
-      Map<String, dynamic>? body,
-      Map<String, String>? header,
-      bool fileUpload = false}) async {
-    Map<String, String> headers = {};
+  Future<dynamic> getResponse({
+    required String url,
+    required APIType apiType,
+    Map<String, dynamic>? body,
+    Map<String, String>? headers,
+    bool fileUpload = false,
+  }) async {
+    headers ??= {};
 
     try {
-      if (apitype == APIType.aGet) {
-        final result = await http.get(Uri.parse(url), headers: headers);
-        response = returnResponse(result.statusCode, result.body);
-        //debugPrint("RES status code ${result.statusCode}");
-        //debugPrint("res${result.body}");
-      } else if (apitype == APIType.aPost) {
-        debugPrint("REQUEST PARAMETER url  $url");
-        debugPrint("REQUEST PARAMETER $body");
+      http.Response result;
 
-        final result =
-            await http.post(Uri.parse(url), body: body, headers: headers);
-        debugPrint("resp${result.body}");
-        response = returnResponse(result.statusCode, result.body);
-        log(result.statusCode.toString());
-      } else if (apitype == APIType.aPut) {
-        final result = await http.put(Uri.parse(url), headers: headers);
-        response = returnResponse(result.statusCode, result.body);
-        //debugPrint("RES status code ${result.statusCode}");
-        //debugPrint("res${result.body}");
+      switch (apiType) {
+        case APIType.aGet:
+          log('GET Request: $url');
+          result = await http.get(Uri.parse(url), headers: headers);
+          break;
+        case APIType.aPost:
+          log('POST Request: $url, Body: ${jsonEncode(body)}');
+          result = await http.post(Uri.parse(url),
+              body: jsonEncode(body), headers: headers);
+          break;
+        case APIType.aPut:
+          log('PUT Request: $url, Body: ${jsonEncode(body)}');
+          result = await http.put(Uri.parse(url),
+              body: jsonEncode(body), headers: headers);
+          break;
+        case APIType.aPatch:
+          log('PATCH Request: $url, Body: ${jsonEncode(body)}');
+          result = await http.patch(Uri.parse(url),
+              body: jsonEncode(body), headers: headers);
+          break;
+        default:
+          throw Exception('APIType not supported');
       }
-    } on SocketException {
-      throw FetchDataException('No Internet access');
-    }
 
-    return response;
+      log('Response Status Code: ${result.statusCode}');
+      log('Response Body: ${result.body}');
+
+      return returnResponse(result.statusCode, result.body);
+    } on SocketException {
+      log('No Internet connection');
+      throw FetchDataException('No Internet access');
+    } catch (e) {
+      log('Error: $e');
+      rethrow;
+    }
   }
 
-  returnResponse(int status, String result) {
+  dynamic returnResponse(int status, String result) {
     switch (status) {
       case 200:
-        return jsonDecode(result);
       case 201:
         return jsonDecode(result);
       case 400:
-        return jsonDecode(result);
+        throw BadRequestException(jsonDecode(result)['message']);
       case 401:
-        throw UnauthorisedException('Unauthorised user');
+        throw UnauthorisedException(jsonDecode(result)['message']);
       case 404:
         throw ServerException('Server Error');
       case 500:

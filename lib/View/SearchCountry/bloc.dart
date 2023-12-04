@@ -19,7 +19,7 @@ class CountriesBloc extends Bloc<CountriesEvent, CountriesState> {
       List<CountriesResponseModel> response =
           await CountriesRepo.getAllCountries();
 
-      log("COUNTRIES REPO RESPONSE ======== $response");
+      // log("COUNTRIES REPO RESPONSE ======== $response");
 
       emit(WrapperCountriesState(ApiResponse.complete(response)));
     } catch (error) {

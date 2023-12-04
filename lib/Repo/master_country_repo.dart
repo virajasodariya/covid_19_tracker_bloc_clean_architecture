@@ -8,11 +8,11 @@ class MasterCountryRepo {
   static Future<MasterCountryResponseModel> getSingleCountryData(
       String countryName) async {
     String url = "${BaseUrl.kBaseUrl}${EndPoint.kCountries}/$countryName";
-    log("MASTER COUNTRY URL : $url");
+    // log("MASTER COUNTRY URL : $url");
 
     var apiResponse = await APIService().getResponse(
       url: url,
-      apitype: APIType.aGet,
+      apiType: APIType.aGet,
     );
 
     MasterCountryResponseModel responseData =

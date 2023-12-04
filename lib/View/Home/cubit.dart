@@ -15,7 +15,7 @@ class AllCubit extends Cubit<AllState> {
 
       AllResponseModel response = await AllCountriesRepo.getAllCountriesData();
 
-      log("ALL COUNTRIES REPO RESPONSE ======== $response");
+      // log("ALL COUNTRIES REPO RESPONSE ======== $response");
 
       emit(WrapperAllState(ApiResponse.complete(response)));
     } catch (error) {
